@@ -8,16 +8,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float movementFactor = 0.1f;
     [SerializeField] float jumpPower = 1f;
     [SerializeField] int jumpCounter = 1;
-    
-    
-    int jumpCounterDefault;
-    
+
+
+
+
     Rigidbody2D rb;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        jumpCounterDefault = jumpCounter;
     }
 
 
