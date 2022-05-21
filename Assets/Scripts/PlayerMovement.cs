@@ -10,11 +10,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] int jumpCounter = 1;
     [SerializeField] int howManyJump = 4;
 
+    
     Rigidbody2D rb;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        
     }
 
 
@@ -41,9 +43,9 @@ public class PlayerMovement : MonoBehaviour
     private void MovementHorizontal()
     {
         float movement = Input.GetAxis("Horizontal");
-
+        
         float movementPower = movement * movementFactor * Time.deltaTime;
-
+        
         transform.position = transform.position + new Vector3(movementPower, 0, 0);
     }
 
