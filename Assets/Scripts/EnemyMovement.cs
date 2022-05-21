@@ -6,9 +6,12 @@ public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] float xThrowPower = 10f; 
     [SerializeField] float yThrowPower = 10f;
-
+    [SerializeField] float movementSpeed = 1f;
     Rigidbody2D rb;
 
+    float xPos;
+    float playerXPos;
+    int direction = 0;
     void Start()
     {
         ThrowTheEnemy();
@@ -30,6 +33,38 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
-        
+        MoveEnemy();   
     }
+
+    void MoveEnemy()
+    {
+        float movementPower = movementSpeed * Time.deltaTime;
+        if(xPos<playerXPos)
+            {
+                transform.position = transform.position + new Vector3(movementPower*direction,0,0);   
+            }
+            else
+            {
+                transform.position = transform.position + new Vector3(movementPower*direction,0,0);    
+            }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.tag == "Player")
+        {
+            xPos = transform.position.x;
+            playerXPos = other.transform.position.x;
+            
+            if(xPos<playerXPos)
+            {
+                direction = 1;
+            }
+            else
+            {
+                direction = -1;
+            }
+            
+        }
+    }
+
 }

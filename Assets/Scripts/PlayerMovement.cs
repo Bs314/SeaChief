@@ -8,9 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float movementFactor = 0.1f;
     [SerializeField] float jumpPower = 1f;
     [SerializeField] int jumpCounter = 1;
-
-
-
+    [SerializeField] int howManyJump = 4;
 
     Rigidbody2D rb;
 
@@ -49,8 +47,12 @@ public class PlayerMovement : MonoBehaviour
         transform.position = transform.position + new Vector3(movementPower, 0, 0);
     }
 
-    public void jumpCounterSet(int value)
-    {
-        jumpCounter = value;
+   
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        if(other.gameObject.tag == "Ground")
+        {
+            jumpCounter = howManyJump;
+        }
     }
 }
