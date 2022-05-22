@@ -8,12 +8,17 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] float yThrowPower = 10f;
     [SerializeField] float movementSpeed = 1f;
     Rigidbody2D rb;
-
+    ShakeCamera shakeCamera;
     float xPos;
     float playerXPos;
     int direction = 0;
+    bool isTouchedEnemy = false;
+    bool isShaked = false;
+
     void Start()
     {
+        shakeCamera = FindObjectOfType<ShakeCamera>();
+
         ThrowTheEnemy();
     }
 
@@ -64,6 +69,21 @@ public class EnemyMovement : MonoBehaviour
                 direction = -1;
             }
             
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        if(other.gameObject.tag == "Ground")
+        {
+            if(!isTouchedEnemy && !isShaked)
+            {
+                shakeCamera.CameraShake();
+                isShaked = true;
+            }
+        }
+        if(other.gameObject.tag == "Enemy")
+        {
+            isTouchedEnemy = true;
         }
     }
 
