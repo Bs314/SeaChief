@@ -40,6 +40,7 @@ public class EnemySpawner : MonoBehaviour
         int spawnIndex = Random.Range(0,4);
         Instantiate(enemy,SpawnPoints[spawnIndex].transform.position,Quaternion.identity);
         isEnemySpawning = false;
+        
     }
 
 

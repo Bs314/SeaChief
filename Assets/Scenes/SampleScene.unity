@@ -1168,7 +1168,7 @@ MonoBehaviour:
   - {fileID: 66105142}
   - {fileID: 712934030}
   - {fileID: 471266072}
-  spawnRate: 5
+  spawnRate: 10
   spawnRateVar: 1
 --- !u!4 &1514034401
 Transform:
@@ -1411,6 +1411,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &1863677053 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1863677053, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
+  m_PrefabInstance: {fileID: 3809884836440339088}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1874609459
 GameObject:
   m_ObjectHideFlags: 0
@@ -1767,6 +1772,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 249848193, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
+      propertyPath: attackPoint
+      value: 
+      objectReference: {fileID: 1863677053}
+    - target: {fileID: 249848193, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
+      propertyPath: attackRange
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 249848193, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
+      propertyPath: enemyLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 1863677053, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.848
+      objectReference: {fileID: 0}
+    - target: {fileID: 1863677053, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2273812079612844361, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
       propertyPath: m_RootOrder
       value: 2

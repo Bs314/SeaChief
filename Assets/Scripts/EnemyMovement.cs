@@ -9,6 +9,8 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] float movementSpeed = 1f;
     [SerializeField] Animator animator;
     [SerializeField] int health = 100;
+    [SerializeField] float hitBack = 1f;
+    [SerializeField] ParticleSystem crabParticle;
 
 
 
@@ -19,6 +21,7 @@ public class EnemyMovement : MonoBehaviour
     int direction = 0;
     bool isTouchedEnemy = false;
     bool isShaked = false;
+    bool isEnemyAlive = true;
 
     void Start()
     {
@@ -31,8 +34,8 @@ public class EnemyMovement : MonoBehaviour
     private void ThrowTheEnemy()
     {
         rb = GetComponent<Rigidbody2D>();
-        float xPos = transform.position.x;
-        if (xPos < 0)
+        float initialXPos = transform.position.x;
+        if (initialXPos < 0)
         {
             rb.velocity = new Vector2(xThrowPower, yThrowPower);
         }
@@ -44,7 +47,15 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
-        MoveEnemy();   
+        if(isEnemyAlive)
+        {
+            MoveEnemy();
+        }
+        else
+        {
+            
+        }
+           
     }
 
     void MoveEnemy()
@@ -52,6 +63,7 @@ public class EnemyMovement : MonoBehaviour
         float movementPower = movementSpeed * Time.deltaTime;
         if(xPos<playerXPos)
             {
+                
                 transform.position = transform.position + new Vector3(movementPower*direction,0,0);   
             }
             else
@@ -107,14 +119,37 @@ public class EnemyMovement : MonoBehaviour
     {
         health -= damage;
 
-        if(health < 1)
+        if (health < 1)
         {
-            //Die();
+            Die();
+        }
+
+        // hit effect
+        Invoke("HitEffect",0.2f);
+        //HitEffect();
+
+    }
+
+    private void HitEffect()
+    {
+        crabParticle.Play();
+        if (xPos < playerXPos)
+        {
+            rb.velocity = new Vector2(-hitBack, 1.5f);
+        }
+        else
+        {
+            rb.velocity = new Vector2(hitBack, 1.5f);
         }
     }
 
     void Die()
     {
+        isEnemyAlive = false;
+        animator.SetTrigger("death");
+        
+        Destroy(gameObject,2);
+
 
     }
 

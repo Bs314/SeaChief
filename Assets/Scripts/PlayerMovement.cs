@@ -11,6 +11,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] int jumpCounter = 1;
     [SerializeField] int howManyJump = 4;
     [SerializeField] Animator animator;
+    [SerializeField] Transform attackPoint;
+    [SerializeField] float attackRange = 0.5f;
+    [SerializeField] LayerMask enemyLayer;
 
     BoxCollider2D boxCollider2D;
     Rigidbody2D rb;
@@ -27,11 +30,38 @@ public class PlayerMovement : MonoBehaviour
         MovementHorizontal();
         MovementJump();
         JumpAnimation();
-
-
+        PlayerAttack();
+        
     }
 
+    private void PlayerAttack()
+    {   
+        
+        if(Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            Attack();
+        }
+    }
 
+    private void Attack()
+    {
+        // play attack animation
+        animator.SetTrigger("attack");
+        // detect all enemy in range
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);   
+
+        foreach(Collider2D enemy in hitEnemies)
+        {
+            enemy.GetComponentInParent<EnemyMovement>().Hit(50);
+            Debug.Log("we hit " + enemy.name);
+        }
+    }
+
+    private void OnDrawGizmos() {
+        if(attackPoint==null)return;
+
+        Gizmos.DrawWireSphere(attackPoint.position,attackRange);    
+    }
 
     private void MovementJump()
     {
@@ -47,8 +77,6 @@ public class PlayerMovement : MonoBehaviour
             }
 
         }
-
-        
 
     }
 
@@ -82,7 +110,7 @@ public class PlayerMovement : MonoBehaviour
         FlipSprite(movement);
         float movementPower = movement * movementFactor * Time.deltaTime;
 
-        rb.velocity = rb.velocity + new Vector2(movementPower, 0);
+        //rb.velocity = new Vector2(movementPower, 0);
         transform.position = transform.position + new Vector3(movementPower, 0, 0);
 
         if (movement != 0)
@@ -106,8 +134,6 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
-
-
 
     private void OnCollisionEnter2D(Collision2D other)
     {
