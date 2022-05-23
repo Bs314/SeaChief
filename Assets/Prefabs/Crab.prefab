@@ -209,8 +209,9 @@ MonoBehaviour:
   yThrowPower: 5
   movementSpeed: 1
   animator: {fileID: 826757289132073536}
+  player: {fileID: 8146792684845761519, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
   health: 100
-  hitBack: 1
+  hitBack: 5
   crabParticle: {fileID: 2675125539484339474}
 --- !u!95 &826757289132073536
 Animator:
@@ -327,7 +328,7 @@ GameObject:
   - component: {fileID: 1996143644662966094}
   m_Layer: 6
   m_Name: body
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -427,7 +428,7 @@ GameObject:
   - component: {fileID: 1397891095523887186}
   m_Layer: 6
   m_Name: hanf left
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5331,9 +5332,9 @@ GameObject:
   - component: {fileID: 6710101435422863324}
   - component: {fileID: 6847258571592417729}
   - component: {fileID: 4047768196971276394}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: hand right
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

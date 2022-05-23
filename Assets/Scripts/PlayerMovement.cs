@@ -10,7 +10,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpPower = 1f;
     [SerializeField] int jumpCounter = 1;
     [SerializeField] int howManyJump = 4;
+
     [SerializeField] Animator animator;
+
     [SerializeField] Transform attackPoint;
     [SerializeField] float attackRange = 0.5f;
     [SerializeField] LayerMask enemyLayer;
@@ -18,10 +20,17 @@ public class PlayerMovement : MonoBehaviour
     BoxCollider2D boxCollider2D;
     Rigidbody2D rb;
 
+    PlayerMovement playerMovement;
+
+    float attackRate = 4f;
+    float nextAttackTime = 0f;
+    bool isPlayerLive = true;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         boxCollider2D = GetComponentInChildren<BoxCollider2D>();
+        playerMovement = GetComponent<PlayerMovement>();
     }
 
 
@@ -31,16 +40,21 @@ public class PlayerMovement : MonoBehaviour
         MovementJump();
         JumpAnimation();
         PlayerAttack();
-        
+
     }
 
     private void PlayerAttack()
-    {   
-        
-        if(Input.GetKeyDown(KeyCode.LeftControl))
+    {
+        if (Time.time > nextAttackTime)
         {
-            Attack();
+            if (Input.GetKeyDown(KeyCode.LeftControl))
+            {
+                Attack();
+                nextAttackTime = Time.time + 1f / attackRate;
+            }
+
         }
+
     }
 
     private void Attack()
@@ -48,19 +62,20 @@ public class PlayerMovement : MonoBehaviour
         // play attack animation
         animator.SetTrigger("attack");
         // detect all enemy in range
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);   
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
 
-        foreach(Collider2D enemy in hitEnemies)
+        foreach (Collider2D enemy in hitEnemies)
         {
             enemy.GetComponentInParent<EnemyMovement>().Hit(50);
             Debug.Log("we hit " + enemy.name);
         }
     }
 
-    private void OnDrawGizmos() {
-        if(attackPoint==null)return;
+    private void OnDrawGizmos()
+    {
+        if (attackPoint == null) return;
 
-        Gizmos.DrawWireSphere(attackPoint.position,attackRange);    
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 
     private void MovementJump()
@@ -143,5 +158,28 @@ public class PlayerMovement : MonoBehaviour
             jumpCounter = howManyJump;
         }
 
+        if (other.gameObject.tag == "Enemy")
+        {
+            //die or take damage
+            Die();
+        }
+
+    }
+
+    private void Die()
+    {
+        if (isPlayerLive)
+        {
+            isPlayerLive = false;
+            animator.SetTrigger("die");
+            playerMovement.enabled = false;
+        }
+
+
+    }
+
+    public bool getPlayerLiveStatus()
+    {
+        return isPlayerLive;
     }
 }

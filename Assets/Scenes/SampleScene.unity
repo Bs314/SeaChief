@@ -344,7 +344,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &371738741
 GameObject:
@@ -1131,7 +1131,7 @@ Transform:
   m_Children:
   - {fileID: 1039426}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1514034399
 GameObject:
@@ -1182,7 +1182,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1639694333
 GameObject:
@@ -1411,11 +1411,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &1863677053 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1863677053, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
-  m_PrefabInstance: {fileID: 3809884836440339088}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1874609459
 GameObject:
   m_ObjectHideFlags: 0
@@ -1732,7 +1727,7 @@ Transform:
   - {fileID: 1652012842}
   - {fileID: 2142494683}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2142494682
 GameObject:
@@ -1772,29 +1767,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 249848193, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
-      propertyPath: attackPoint
-      value: 
-      objectReference: {fileID: 1863677053}
-    - target: {fileID: 249848193, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
-      propertyPath: attackRange
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 249848193, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
-      propertyPath: enemyLayer.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 1863677053, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.848
-      objectReference: {fileID: 0}
-    - target: {fileID: 1863677053, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2273812079612844361, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2273812079612844361, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
       propertyPath: m_LocalPosition.x
