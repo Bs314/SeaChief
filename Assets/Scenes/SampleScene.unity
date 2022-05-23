@@ -344,7 +344,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &371738741
 GameObject:
@@ -378,7 +378,7 @@ Transform:
   - {fileID: 973555640}
   - {fileID: 1151348787}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &412004028
 GameObject:
@@ -1131,7 +1131,7 @@ Transform:
   m_Children:
   - {fileID: 1039426}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1514034399
 GameObject:
@@ -1162,14 +1162,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0270465432d8c134384953414fa1b0c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 8904701725769599489, guid: 179d3c7e5b5f66f4c9754354047fb8dc, type: 3}
+  enemy: {fileID: 3992336929969197290, guid: 0f1edf6bcfc83334eabb90cbb4f1cffc, type: 3}
   SpawnPoints:
   - {fileID: 1676087435}
   - {fileID: 66105142}
   - {fileID: 712934030}
   - {fileID: 471266072}
   spawnRate: 5
-  spawnRateVar: 0
+  spawnRateVar: 1
 --- !u!4 &1514034401
 Transform:
   m_ObjectHideFlags: 0
@@ -1182,7 +1182,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1639694333
 GameObject:
@@ -1769,7 +1769,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2273812079612844361, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2273812079612844361, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1777,7 +1777,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2273812079612844361, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -3.66
       objectReference: {fileID: 0}
     - target: {fileID: 2273812079612844361, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
       propertyPath: m_LocalPosition.z

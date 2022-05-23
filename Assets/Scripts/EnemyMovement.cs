@@ -7,6 +7,11 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] float xThrowPower = 10f; 
     [SerializeField] float yThrowPower = 10f;
     [SerializeField] float movementSpeed = 1f;
+    [SerializeField] Animator animator;
+    [SerializeField] int health = 100;
+
+
+
     Rigidbody2D rb;
     ShakeCamera shakeCamera;
     float xPos;
@@ -17,6 +22,7 @@ public class EnemyMovement : MonoBehaviour
 
     void Start()
     {
+        
         shakeCamera = FindObjectOfType<ShakeCamera>();
 
         ThrowTheEnemy();
@@ -52,9 +58,10 @@ public class EnemyMovement : MonoBehaviour
             {
                 transform.position = transform.position + new Vector3(movementPower*direction,0,0);    
             }
+        
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
+    private void OnTriggerStay2D(Collider2D other) {
         if(other.tag == "Player")
         {
             xPos = transform.position.x;
@@ -68,8 +75,15 @@ public class EnemyMovement : MonoBehaviour
             {
                 direction = -1;
             }
+           // animator.enabled = true;
+            
             
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D other) {
+        direction = 0;
+        //animator.enabled = false;
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
@@ -80,11 +94,29 @@ public class EnemyMovement : MonoBehaviour
                 shakeCamera.CameraShake();
                 isShaked = true;
             }
+            
         }
+        
         if(other.gameObject.tag == "Enemy")
         {
             isTouchedEnemy = true;
         }
     }
+
+    public void Hit(int damage)
+    {
+        health -= damage;
+
+        if(health < 1)
+        {
+            //Die();
+        }
+    }
+
+    void Die()
+    {
+
+    }
+
 
 }
