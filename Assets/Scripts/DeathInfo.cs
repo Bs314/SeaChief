@@ -29,15 +29,15 @@ public class DeathInfo : MonoBehaviour
         switch(stage)
         {
             case 1:
-            message = "naber cinim";
+            message = "Sorry its my fault\ni forgat to add a health bar and score area\n ";
             break;
 
             case 2:
-            message = "keep going";
+            message = "Lets increase your damage. maybe you can succeded this time";
             break;
 
             case 3:
-            message = "deneme";
+            message = "I will give you additional jump right 4 times";
             break;
 
             case 4:

@@ -7,6 +7,7 @@ public class GameStage : MonoBehaviour
     
     [SerializeField] int deathCount = 0;
     
+    bool dieBeforeScoreLimits = false;
 
     void Awake() {
         int numGameStage = FindObjectsOfType<GameStage>().Length;
@@ -29,7 +30,7 @@ public class GameStage : MonoBehaviour
     
     void Update()
     {
-             
+
     }
 
     public int GetDeathCount()
@@ -40,6 +41,16 @@ public class GameStage : MonoBehaviour
     public void IncDeathCount()
     {
         deathCount++;
+    }
+
+    public void SetDieBeforeScoreLimits(bool setValue)
+    {
+        dieBeforeScoreLimits = setValue;
+    }
+
+    public bool GetDieBeforeScoreLimits()
+    {
+        return dieBeforeScoreLimits;
     }
 
 }

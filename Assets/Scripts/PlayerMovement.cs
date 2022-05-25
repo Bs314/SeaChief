@@ -11,8 +11,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpPower = 1f;
     [SerializeField] int jumpCounter = 1;
     [SerializeField] int howManyJump = 4;
-    [SerializeField] int health = 100;
-    
+    [SerializeField] int health = 1;
+    [SerializeField] int damage = 10;
     [SerializeField] Animator animator;
 
     [SerializeField] Transform attackPoint;
@@ -29,16 +29,52 @@ public class PlayerMovement : MonoBehaviour
     float attackRate = 4f;
     float nextAttackTime = 0f;
     bool isPlayerLive = true;
-
+    int stageInfo;
     void Start()
     {
         gameStage = FindObjectOfType<GameStage>();
         rb = GetComponent<Rigidbody2D>();
         boxCollider2D = GetComponentInChildren<BoxCollider2D>();
         playerMovement = GetComponent<PlayerMovement>();
-        
+        StageUpdates();
+
     }
 
+    private void StageUpdates()
+    {
+        stageInfo = gameStage.GetDeathCount();
+        switch(stageInfo)
+        {
+            case 1:
+            // increase health
+            SetHealth(100);
+            
+            break;
+
+            case 2:
+            SetHealth(100);
+            SetDamage(50);
+            
+            break;
+
+            case 3:
+            SetHealth(100);
+            SetDamage(50);
+            SetJump(4);
+            break;
+
+            case 4:
+            SetHealth(100);
+            break;
+
+            case 5:
+            SetHealth(100);
+            break;
+
+            default:
+            break;
+        }
+    }
 
     void Update()
     {
@@ -72,10 +108,16 @@ public class PlayerMovement : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponentInParent<EnemyMovement>().Hit(50);
-            Debug.Log("we hit " + enemy.name);
+            enemy.GetComponentInParent<EnemyMovement>().Hit(damage);
+            
         }
     }
+
+    public void SetDamage(int value)
+    {
+        damage = value;
+    }
+
 
     private void OnDrawGizmos()
     {
@@ -167,9 +209,25 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             //die or take damage
-            Die();
+            int damage = other.gameObject.GetComponent<EnemyMovement>().GetDamage();
+            TakeDamage(damage);
+            if(health<1)
+            {
+                Die();
+            }
+            
         }
 
+    }
+
+    void SetJump(int value)
+    {
+        howManyJump = value;
+    }
+
+    private void TakeDamage(int damage)
+    {
+        health -= damage;   
     }
 
     private void Die()
@@ -202,5 +260,10 @@ public class PlayerMovement : MonoBehaviour
     public int GetHealth()
     {
         return health;
+    }
+
+    public void SetHealth(int setValue)
+    {
+        health = setValue;
     }
 }

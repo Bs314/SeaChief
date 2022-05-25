@@ -142,7 +142,8 @@ GameObject:
   - component: {fileID: 5427073524283749882}
   - component: {fileID: 7301943164671527973}
   - component: {fileID: 826757289132073536}
-  m_Layer: 0
+  - component: {fileID: 7958196362223814106}
+  m_Layer: 6
   m_Name: Crab
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -209,8 +210,9 @@ MonoBehaviour:
   yThrowPower: 5
   movementSpeed: 1
   animator: {fileID: 826757289132073536}
-  player: {fileID: 8146792684845761519, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
+  scoreValue: 20
   health: 100
+  damage: 10
   hitBack: 5
   crabParticle: {fileID: 2675125539484339474}
 --- !u!95 &826757289132073536
@@ -232,6 +234,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!58 &7958196362223814106
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3992336929969197290}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.27}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &5392119659819341821
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,7 +344,7 @@ GameObject:
   - component: {fileID: 2184067173250430373}
   - component: {fileID: 3019307358229918162}
   - component: {fileID: 1996143644662966094}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: body
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -426,7 +444,7 @@ GameObject:
   - component: {fileID: 3755033428332099178}
   - component: {fileID: 5663033506326774339}
   - component: {fileID: 1397891095523887186}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: hanf left
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -5332,7 +5350,7 @@ GameObject:
   - component: {fileID: 6710101435422863324}
   - component: {fileID: 6847258571592417729}
   - component: {fileID: 4047768196971276394}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: hand right
   m_TagString: Enemy
   m_Icon: {fileID: 0}

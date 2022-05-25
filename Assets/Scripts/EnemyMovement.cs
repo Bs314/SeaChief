@@ -8,15 +8,17 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] float yThrowPower = 10f;
     [SerializeField] float movementSpeed = 1f;
     [SerializeField] Animator animator;
-
+    [SerializeField] int scoreValue = 20;
     [SerializeField] int health = 100;
+    [SerializeField] int damage = 10;
     [SerializeField] float hitBack = 1f;
     [SerializeField] ParticleSystem crabParticle;
 
 
     Rigidbody2D rb;
     ShakeCamera shakeCamera;
-    
+    ScoreKeeper scoreKeeper;
+
     float xPos;
     float playerXPos;
     int direction = 0;
@@ -29,6 +31,8 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         shakeCamera = FindObjectOfType<ShakeCamera>();
+        scoreKeeper = FindObjectOfType<ScoreKeeper>();
+
         ThrowTheEnemy();
     }
 
@@ -150,9 +154,14 @@ public class EnemyMovement : MonoBehaviour
     {
         isEnemyAlive = false;
         animator.SetTrigger("death");
-
+        scoreKeeper.AddScore(scoreValue);
         Destroy(gameObject, 2);
 
+    }
+
+    public int GetDamage()
+    {
+        return damage;
     }
 
 }
