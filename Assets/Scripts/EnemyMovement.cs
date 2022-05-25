@@ -128,7 +128,7 @@ public class EnemyMovement : MonoBehaviour
 
         // hit effect
         crabParticle.Play();
-        Invoke("HitEffect", 0.1f);
+        Invoke("HitEffect", 0.2f);
         //HitEffect();
 
     }

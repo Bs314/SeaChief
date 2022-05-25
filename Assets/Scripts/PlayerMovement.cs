@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,17 +11,20 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpPower = 1f;
     [SerializeField] int jumpCounter = 1;
     [SerializeField] int howManyJump = 4;
-
+    [SerializeField] int health = 100;
+    
     [SerializeField] Animator animator;
 
     [SerializeField] Transform attackPoint;
     [SerializeField] float attackRange = 0.5f;
     [SerializeField] LayerMask enemyLayer;
 
+    
+    GameStage gameStage;
     BoxCollider2D boxCollider2D;
     Rigidbody2D rb;
-
     PlayerMovement playerMovement;
+    
 
     float attackRate = 4f;
     float nextAttackTime = 0f;
@@ -28,9 +32,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        gameStage = FindObjectOfType<GameStage>();
         rb = GetComponent<Rigidbody2D>();
         boxCollider2D = GetComponentInChildren<BoxCollider2D>();
         playerMovement = GetComponent<PlayerMovement>();
+        
     }
 
 
@@ -170,16 +176,31 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isPlayerLive)
         {
+            gameStage.IncDeathCount();
             isPlayerLive = false;
             animator.SetTrigger("die");
             playerMovement.enabled = false;
+            StartCoroutine(LoadDeathMenu());
         }
 
 
     }
 
+    IEnumerator LoadDeathMenu()
+    {
+        yield return new WaitForSeconds(2);
+
+        SceneManager.LoadScene("DeathScene");
+        
+    }
+
     public bool getPlayerLiveStatus()
     {
         return isPlayerLive;
+    }
+
+    public int GetHealth()
+    {
+        return health;
     }
 }
