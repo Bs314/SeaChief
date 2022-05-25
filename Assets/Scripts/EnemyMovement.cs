@@ -159,6 +159,7 @@ public class EnemyMovement : MonoBehaviour
         isEnemyAlive = false;
         animator.SetTrigger("death");
         scoreKeeper.AddScore(scoreValue);
+        gameObject.tag = "Dead";
         Destroy(gameObject, 2);
 
     }

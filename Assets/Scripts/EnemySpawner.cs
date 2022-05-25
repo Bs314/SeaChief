@@ -11,10 +11,21 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] float spawnRateVar = 1;
     
     bool isEnemySpawning = false;
+    GameStage gameStage;
 
     void Start()
     {
-      
+        gameStage = FindObjectOfType<GameStage>();
+        StageUpdate();
+    }
+
+    private void StageUpdate()
+    {
+        int stageInfo = gameStage.GetDeathCount();
+        if(stageInfo>1)
+        {
+            spawnRate = spawnRate - stageInfo + 1;
+        }
     }
 
     void Update()
