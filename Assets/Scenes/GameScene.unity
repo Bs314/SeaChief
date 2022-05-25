@@ -2170,6 +2170,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 249848193, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
+      propertyPath: jumpPower
+      value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 249848193, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
+      propertyPath: howManyJump
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 249848193, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
       propertyPath: StageController
       value: 
       objectReference: {fileID: 0}

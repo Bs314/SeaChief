@@ -104,12 +104,17 @@ public class PlayerMovement : MonoBehaviour
         // play attack animation
         animator.SetTrigger("attack");
         // detect all enemy in range
+        Invoke("Hit",0.2f);
+    }
+
+    private void Hit()
+    {
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
 
         foreach (Collider2D enemy in hitEnemies)
         {
             enemy.GetComponentInParent<EnemyMovement>().Hit(damage);
-            
+
         }
     }
 

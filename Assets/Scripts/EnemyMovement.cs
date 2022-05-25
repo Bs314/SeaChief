@@ -127,13 +127,17 @@ public class EnemyMovement : MonoBehaviour
 
         if (health < 1)
         {
-            Die();
+            if(isEnemyAlive)
+            {
+                Die();
+            }
+            
         }
 
         // hit effect
         crabParticle.Play();
-        Invoke("HitEffect", 0.2f);
-        //HitEffect();
+        
+        HitEffect();
 
     }
 
