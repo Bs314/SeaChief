@@ -261,7 +261,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!95 &1623358702
 Animator:
   serializedVersion: 3
@@ -297,13 +297,13 @@ MonoBehaviour:
   yThrowPower: 4
   movementSpeed: 0.5
   animator: {fileID: 1623358702}
-  scoreValue: 20
-  health: 100
-  damage: 10
+  scoreValue: 50
+  health: 150
+  damage: 20
   hitBack: 1
   particle: {fileID: 1355012956309754471}
   isOctopus: 1
-  jumpSpeed: 5.5
+  jumpSpeed: 7
 --- !u!58 &6682375501927878498
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -500,8 +500,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0065550385, y: -0.642634}
-  m_Size: {x: 1.1213062, y: 0.4655531}
+  m_Offset: {x: 0, y: -0.6657941}
+  m_Size: {x: 1.3471197, y: 0.41923314}
   m_Direction: 1
 --- !u!1 &1355012956148253405
 GameObject:

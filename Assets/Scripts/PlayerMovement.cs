@@ -243,6 +243,8 @@ public class PlayerMovement : MonoBehaviour
             isPlayerLive = false;
             animator.SetTrigger("die");
             playerMovement.enabled = false;
+            rb.gravityScale = 0;
+            boxCollider2D.enabled = false;
             StartCoroutine(LoadDeathMenu());
         }
 

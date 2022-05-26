@@ -81,7 +81,7 @@ public class EnemyMovement : MonoBehaviour
         {
 
             isJumping = true;
-            rb.velocity += new Vector2(direction*movementSpeed*2,0);
+            rb.velocity += new Vector2(direction*movementSpeed*2.5f,0);
             StartCoroutine(Jump());
         }
         float movementPower = movementSpeed * Time.deltaTime;
@@ -94,7 +94,7 @@ public class EnemyMovement : MonoBehaviour
         yield return new WaitForSeconds(5);
         float jumpPower = jumpSpeed;
         
-        rb.velocity = new Vector2(0,jumpPower);
+        if(isEnemyAlive)rb.velocity = new Vector2(0,jumpPower);
         isJumping = false;
         
         
