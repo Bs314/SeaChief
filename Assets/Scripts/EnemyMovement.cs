@@ -12,8 +12,8 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] int health = 100;
     [SerializeField] int damage = 10;
     [SerializeField] float hitBack = 1f;
-    [SerializeField] ParticleSystem crabParticle;
-
+    [SerializeField] ParticleSystem particle;
+    
 
     Rigidbody2D rb;
     ShakeCamera shakeCamera;
@@ -135,7 +135,7 @@ public class EnemyMovement : MonoBehaviour
         }
 
         // hit effect
-        crabParticle.Play();
+        particle.Play();
         
         HitEffect();
 

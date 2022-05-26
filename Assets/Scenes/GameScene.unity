@@ -304,7 +304,7 @@ Transform:
   - {fileID: 973555640}
   - {fileID: 1151348787}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &412004028
 GameObject:
@@ -1603,7 +1603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0270465432d8c134384953414fa1b0c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 3992336929969197290, guid: 0f1edf6bcfc83334eabb90cbb4f1cffc, type: 3}
+  enemy: {fileID: 1355012955772468574, guid: 2eab0e21ee4ef6e4482c8f31fda42a15, type: 3}
   SpawnPoints:
   - {fileID: 1676087435}
   - {fileID: 66105142}
@@ -2110,7 +2110,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3016651947719164335, guid: 42c79d6789a290144923baf3fbd94499, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3016651947719164335, guid: 42c79d6789a290144923baf3fbd94499, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2183,7 +2183,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2273812079612844361, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2273812079612844361, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
       propertyPath: m_LocalPosition.x
