@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] float xThrowPower = 10f;
+    [SerializeField] float xThrowPowerVar = 2f;
     [SerializeField] float yThrowPower = 10f;
     [SerializeField] float movementSpeed = 1f;
     [SerializeField] Animator animator;
@@ -16,6 +17,8 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] ParticleSystem particle;
     [SerializeField] bool isOctopus = false;
     [SerializeField] float jumpSpeed = 4;
+    [SerializeField] AudioClip hitSFX;
+    [SerializeField] AudioClip fallSFX;
     
 
     Rigidbody2D rb;
@@ -44,13 +47,15 @@ public class EnemyMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         float initialXPos = transform.position.x;
+        float xPower = UnityEngine.Random.Range(xThrowPower-xThrowPowerVar,xThrowPower+xThrowPowerVar);
+
         if (initialXPos < 0)
         {
-            rb.velocity = new Vector2(xThrowPower, yThrowPower);
+            rb.velocity = new Vector2(xPower, yThrowPower);
         }
         else
         {
-            rb.velocity = new Vector2(-xThrowPower, yThrowPower);
+            rb.velocity = new Vector2(-xPower, yThrowPower);
         }
     }
 
@@ -140,6 +145,7 @@ public class EnemyMovement : MonoBehaviour
         {
             if (!isTouchedEnemy && !isShaked)
             {
+                AudioSource.PlayClipAtPoint(fallSFX,transform.position);
                 shakeCamera.CameraShake();
                 isShaked = true;
                 
@@ -156,6 +162,7 @@ public class EnemyMovement : MonoBehaviour
 
     public void Hit(int damage)
     {
+        AudioSource.PlayClipAtPoint(hitSFX,transform.position);
         health -= damage;
 
         if (health < 1)

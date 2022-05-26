@@ -1603,13 +1603,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0270465432d8c134384953414fa1b0c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 3992336929969197290, guid: 0f1edf6bcfc83334eabb90cbb4f1cffc, type: 3}
+  enemy: {fileID: 1355012955772468574, guid: 2eab0e21ee4ef6e4482c8f31fda42a15, type: 3}
   SpawnPoints:
   - {fileID: 1676087435}
   - {fileID: 66105142}
   - {fileID: 712934030}
   - {fileID: 471266072}
-  spawnRate: 5
+  spawnRate: 50
   spawnRateVar: 1
 --- !u!4 &1514034401
 Transform:
@@ -2166,21 +2166,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 249848193, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
-      propertyPath: gameStage
+      propertyPath: swosh
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 249848193, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
-      propertyPath: jumpPower
-      value: 5.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 249848193, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
-      propertyPath: howManyJump
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 249848193, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
-      propertyPath: StageController
-      value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 8ad186d523196944eb85a200a1d49c24, type: 3}
     - target: {fileID: 2273812079612844361, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -2223,6 +2211,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2273812079612844361, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5326180511697482601, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
+      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8146792684845761519, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}

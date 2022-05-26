@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] int health = 1;
     [SerializeField] int damage = 10;
     [SerializeField] Animator animator;
+    [Header("Sound")]
+    [SerializeField] AudioClip swosh;  
 
     [SerializeField] Transform attackPoint;
     [SerializeField] float attackRange = 0.5f;
@@ -60,15 +62,20 @@ public class PlayerMovement : MonoBehaviour
             case 3:
             SetHealth(100);
             SetDamage(50);
-            SetJump(4);
+            SetJump(2);
             break;
 
             case 4:
             SetHealth(100);
+            SetDamage(50);
+            SetJump(3);
+            //dash 
             break;
 
             case 5:
             SetHealth(100);
+            SetDamage(50);
+            SetJump(4);
             break;
 
             default:
@@ -103,6 +110,7 @@ public class PlayerMovement : MonoBehaviour
     {
         // play attack animation
         animator.SetTrigger("attack");
+        AudioSource.PlayClipAtPoint(swosh,transform.position);
         // detect all enemy in range
         Invoke("Hit",0.2f);
     }

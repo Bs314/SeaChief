@@ -304,6 +304,8 @@ MonoBehaviour:
   particle: {fileID: 1355012956309754471}
   isOctopus: 1
   jumpSpeed: 7
+  hitSFX: {fileID: 8300000, guid: 93145ff3be849644aa5d5dc445f3140a, type: 3}
+  fallSFX: {fileID: 8300000, guid: 6bb88dfd16c345b47bb04e3db88f18aa, type: 3}
 --- !u!58 &6682375501927878498
 CircleCollider2D:
   m_ObjectHideFlags: 0
