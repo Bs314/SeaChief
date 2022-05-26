@@ -210,13 +210,13 @@ MonoBehaviour:
   yThrowPower: 5
   movementSpeed: 1
   animator: {fileID: 826757289132073536}
-  rb: {fileID: 5427073524283749882}
   scoreValue: 20
   health: 100
   damage: 10
   hitBack: 5
-  crabParticle: {fileID: 2675125539484339474}
+  particle: {fileID: 2675125539484339474}
   isOctopus: 0
+  jumpSpeed: 4
 --- !u!95 &826757289132073536
 Animator:
   serializedVersion: 3

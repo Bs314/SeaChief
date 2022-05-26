@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,12 +14,15 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] int damage = 10;
     [SerializeField] float hitBack = 1f;
     [SerializeField] ParticleSystem particle;
+    [SerializeField] bool isOctopus = false;
+    [SerializeField] float jumpSpeed = 4;
     
 
     Rigidbody2D rb;
     ShakeCamera shakeCamera;
     ScoreKeeper scoreKeeper;
 
+    bool isJumping = false;
     float xPos;
     float playerXPos;
     int direction = 0;
@@ -54,7 +58,15 @@ public class EnemyMovement : MonoBehaviour
     {
         if (isEnemyAlive)
         {
-            MoveEnemy();
+            if(isOctopus)
+            {
+                MoveOctopus();
+            }
+            else
+            {
+                MoveCrab();
+            }
+            
         }
         else
         {
@@ -63,18 +75,37 @@ public class EnemyMovement : MonoBehaviour
 
     }
 
-    void MoveEnemy()
+    private void MoveOctopus()
     {
-        float movementPower = movementSpeed * Time.deltaTime;
-        if (xPos < playerXPos)
+        if(!isJumping)
         {
 
-            transform.position = transform.position + new Vector3(movementPower * direction, 0, 0);
+            isJumping = true;
+            rb.velocity += new Vector2(direction*movementSpeed*2,0);
+            StartCoroutine(Jump());
         }
-        else
-        {
-            transform.position = transform.position + new Vector3(movementPower * direction, 0, 0);
-        }
+        float movementPower = movementSpeed * Time.deltaTime;
+        transform.position = transform.position + new Vector3(movementPower * direction, 0, 0);
+        
+    }
+
+    IEnumerator Jump()
+    {
+        yield return new WaitForSeconds(5);
+        float jumpPower = jumpSpeed;
+        
+        rb.velocity = new Vector2(0,jumpPower);
+        isJumping = false;
+        
+        
+    }
+
+    void MoveCrab()
+    {
+        float movementPower = movementSpeed * Time.deltaTime;
+        
+        transform.position = transform.position + new Vector3(movementPower * direction, 0, 0);
+       
 
     }
 
@@ -111,7 +142,9 @@ public class EnemyMovement : MonoBehaviour
             {
                 shakeCamera.CameraShake();
                 isShaked = true;
+                
             }
+            
 
         }
 

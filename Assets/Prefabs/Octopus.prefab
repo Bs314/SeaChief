@@ -261,7 +261,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &1623358702
 Animator:
   serializedVersion: 3
@@ -295,13 +295,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xThrowPower: 4
   yThrowPower: 4
-  movementSpeed: 1
+  movementSpeed: 0.5
   animator: {fileID: 1623358702}
   scoreValue: 20
   health: 100
   damage: 10
   hitBack: 1
   particle: {fileID: 1355012956309754471}
+  isOctopus: 1
+  jumpSpeed: 5.5
 --- !u!58 &6682375501927878498
 CircleCollider2D:
   m_ObjectHideFlags: 0
