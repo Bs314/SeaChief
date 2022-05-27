@@ -761,7 +761,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 218392826}
   m_FillRect: {fileID: 1465724573}
   m_HandleRect: {fileID: 218392825}
@@ -769,7 +769,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 66.1
+  m_Value: 56.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1574,6 +1574,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1512177407 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8146792684845761519, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
+  m_PrefabInstance: {fileID: 3809884836440339088}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1514034399
 GameObject:
   m_ObjectHideFlags: 0
@@ -2063,6 +2068,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 643929517}
   playerCanvas: {fileID: 1258734966}
+  player: {fileID: 1512177407}
   stageInfo: 0
 --- !u!4 &2031993618
 Transform:

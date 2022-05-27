@@ -31,24 +31,29 @@ public class DeathInfo : MonoBehaviour
         switch(stage)
         {
             case 1:
-            message = "Sorry its my fault\ni forgat to add a health bar and score area\n ";
+            message = "Sorry this is my fault\nI'm creating an area for you to follow the score\nIn the upper left corner\nI also give you 100 HP\nUse it wisely !";
             break;
 
             case 2:
-            message = "Lets increase your damage. maybe you can succeded this time";
+            message = "It's clear that you need some strength\nDon't worry, I'm increasing your damage\nI hope you fight longer than you did last time";
             break;
 
             case 3:
-            message = "I will give you additional jump right 2";
+            message = "Aren't they too many?\nI'm giving you 2 jumps for some more relief\nYou can use it to escape when they pile up around you";
             break;
 
             case 4:
-            message = "Alright... i ll give you a Dash Ability\nWhen you hit the LEFT ALT key\nYou will DASH and SMASH !!!";
+            message = "Don't panic when enemies surround you\nI said I would help you. Now I'm giving you the DASH skill\nYou can use it as many times as you want\nby pressing the LEFT-ALT key\nAlso you can jump 3 times";
             break;
 
             case 5:
-            message = "deneme deneme deneme";
+            message = "I gave you everything I could\nFor more, I need to take a few more courses\nUntil then, I believe you can reach the desired score\nwith what you have...\nYou can jum 4 times now..";
             break;
+
+            default: 
+            message = "Come on !!!\nYou can do it";
+            break;
+
         }
 
         text.text = message;

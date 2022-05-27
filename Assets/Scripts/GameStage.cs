@@ -40,7 +40,7 @@ public class GameStage : MonoBehaviour
 
     public void IncDeathCount()
     {
-        deathCount++;
+        if(deathCount<6)deathCount++;
     }
 
     public void SetDieBeforeScoreLimits(bool setValue)

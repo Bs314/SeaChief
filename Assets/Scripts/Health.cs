@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
     
     [SerializeField] Slider healthBar;
     [SerializeField] GameObject playerCanvas;
+    [SerializeField] GameObject player;
     PlayerMovement playerMovement;
     GameStage gameStage;
 
@@ -19,7 +20,7 @@ public class Health : MonoBehaviour
         
         gameStage = FindObjectOfType<GameStage>();
         stageInfo = gameStage.GetDeathCount(); 
-        playerMovement = FindObjectOfType<PlayerMovement>();   
+        playerMovement = player.GetComponent<PlayerMovement>();      
         healthBar.maxValue = playerMovement.GetHealth();    
     }
 

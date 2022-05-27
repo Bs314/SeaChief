@@ -28,10 +28,10 @@ public class EnemySpawner : MonoBehaviour
     private void StageUpdate()
     {
         int stageInfo = gameStage.GetDeathCount();
-        if(stageInfo>2)
+        if(stageInfo>=1)
         {
             octopusTurn = true;
-            RushTime += stageInfo*10;
+            RushTime += stageInfo*20;
         }
     }
 

@@ -86,9 +86,14 @@ public class PlayerMovement : MonoBehaviour
                 SetHealth(100);
                 SetDamage(50);
                 SetJump(4);
+                dash.enabled = true;
                 break;
 
             default:
+                SetHealth(100);
+                SetDamage(50);
+                SetJump(4);
+                dash.enabled = true;
                 break;
         }
     }
