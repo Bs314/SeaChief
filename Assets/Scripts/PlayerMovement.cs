@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     BoxCollider2D boxCollider2D;
     Rigidbody2D rb;
     PlayerMovement playerMovement;
-
+    Dash dash;
 
     float attackRate = 4f;
     float nextAttackTime = 0f;
@@ -39,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         boxCollider2D = GetComponentInChildren<BoxCollider2D>();
         playerMovement = GetComponent<PlayerMovement>();
+        dash = GetComponent<Dash>();
         StageUpdates();
 
     }
@@ -48,15 +49,21 @@ public class PlayerMovement : MonoBehaviour
         stageInfo = gameStage.GetDeathCount();
         switch (stageInfo)
         {
+            case 0:
+                dash.enabled = false;
+                break;
+                
             case 1:
                 // increase health
                 SetHealth(100);
+                dash.enabled = false;
 
                 break;
 
             case 2:
                 SetHealth(100);
                 SetDamage(50);
+                dash.enabled = false;
 
                 break;
 
@@ -64,13 +71,15 @@ public class PlayerMovement : MonoBehaviour
                 SetHealth(100);
                 SetDamage(50);
                 SetJump(2);
+                dash.enabled = false;
                 break;
 
             case 4:
                 SetHealth(100);
                 SetDamage(50);
                 SetJump(3);
-                //dash 
+                dash.enabled = true;
+                
                 break;
 
             case 5:

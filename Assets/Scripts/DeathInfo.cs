@@ -39,11 +39,11 @@ public class DeathInfo : MonoBehaviour
             break;
 
             case 3:
-            message = "I will give you additional jump right 4 times";
+            message = "I will give you additional jump right 2";
             break;
 
             case 4:
-            message = "deneme bir ki";
+            message = "Alright... i ll give you a Dash Ability\nWhen you hit the LEFT ALT key\nYou will DASH and SMASH !!!";
             break;
 
             case 5:

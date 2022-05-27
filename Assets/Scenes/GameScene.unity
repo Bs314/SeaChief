@@ -1612,7 +1612,7 @@ MonoBehaviour:
   - {fileID: 712934030}
   - {fileID: 471266072}
   spawnRate: 4
-  spawnRateVar: 1
+  spawnRateVar: 0.5
   waterSplash: {fileID: 8300000, guid: 01823371bce0389429f1acf3943a0bb5, type: 3}
   RushTime: 20
 --- !u!4 &1514034401
@@ -2265,14 +2265,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 249848193, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
-      propertyPath: hurt
-      value: 
-      objectReference: {fileID: 8300000, guid: 26da02059728e204ebdbbee8af107707, type: 3}
-    - target: {fileID: 249848193, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
-      propertyPath: swosh
-      value: 
-      objectReference: {fileID: 8300000, guid: 9c098c418be556243886f266b19d575e, type: 3}
     - target: {fileID: 2273812079612844361, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -2315,10 +2307,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2273812079612844361, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5326180511697482601, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}
-      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8146792684845761519, guid: 3d66c18547ae9ad46ad7aa2711753979, type: 3}

@@ -10,51 +10,58 @@ public class Dash : MonoBehaviour
 {
 
     [SerializeField] Rigidbody2D rb;
+    [SerializeField] float dashTime;
+    [SerializeField] float startDashTime = 5f;
+    [SerializeField] float dashSpeed = 0.5f;
+    [SerializeField] AudioClip dashSFX;
+    [SerializeField] ParticleSystem dashParticle;
     
-    [SerializeField] float dashSpeed = 5f;
-    [SerializeField] float dashTime = 0.5f;
 
     Animator animator;
-    PlayerMovement playerMovement;
-    // Start is called before the first frame update
+    
+    bool isDashing = false;
+   
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
-        playerMovement = GetComponent<PlayerMovement>();
+       
+        dashTime = startDashTime;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.LeftAlt))
-        {
-            ProcessDash();
-        }
-        
+        ProcessDash();
     }
 
     private void ProcessDash()
     {
-        float dashTimeold = dashTime;
-        animator.SetTrigger("dash");
-        rb.gravityScale = 0;
-        while(dashTime>0)
+        if (!isDashing)
         {
+            if (Input.GetKeyDown(KeyCode.LeftAlt))
+            {
+                dashParticle.Play();
+                animator.SetTrigger("dash");
+                AudioSource.PlayClipAtPoint(dashSFX, transform.position);
+                isDashing = true;
+                rb.gravityScale = 0;
+            }
+        }
+        else
+        {
+            if (dashTime <= 0)
+            {
+                rb.gravityScale = 1;
+                isDashing = false;
+                dashTime = startDashTime;
+                rb.velocity = Vector2.zero;
 
-            dashTime -= Time.deltaTime;
-            
-            float dash = transform.localScale.x * dashSpeed;
-            //transform.Translate(new Vector3(dash,0,0));
-            rb.velocity = new Vector2(dash,0);
-            
-            
+            }
+            else
+            {
+                dashTime -= Time.deltaTime;
+                float dash = transform.localScale.x * dashSpeed;
+                rb.velocity = new Vector2(dash, 0);
+            }
         }
-        while(rb.velocity.x!=0)
-        {
-            
-        }
-        rb.gravityScale = 1;
-        dashTime = dashTimeold;
-        
     }
 }
