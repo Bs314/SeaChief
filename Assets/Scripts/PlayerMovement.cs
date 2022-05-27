@@ -15,18 +15,19 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] int damage = 10;
     [SerializeField] Animator animator;
     [Header("Sound")]
-    [SerializeField] AudioClip swosh;  
+    [SerializeField] AudioClip swosh;
+    [SerializeField] AudioClip hurt;
 
     [SerializeField] Transform attackPoint;
     [SerializeField] float attackRange = 0.5f;
     [SerializeField] LayerMask enemyLayer;
 
-    
+
     GameStage gameStage;
     BoxCollider2D boxCollider2D;
     Rigidbody2D rb;
     PlayerMovement playerMovement;
-    
+
 
     float attackRate = 4f;
     float nextAttackTime = 0f;
@@ -45,41 +46,41 @@ public class PlayerMovement : MonoBehaviour
     private void StageUpdates()
     {
         stageInfo = gameStage.GetDeathCount();
-        switch(stageInfo)
+        switch (stageInfo)
         {
             case 1:
-            // increase health
-            SetHealth(100);
-            
-            break;
+                // increase health
+                SetHealth(100);
+
+                break;
 
             case 2:
-            SetHealth(100);
-            SetDamage(50);
-            
-            break;
+                SetHealth(100);
+                SetDamage(50);
+
+                break;
 
             case 3:
-            SetHealth(100);
-            SetDamage(50);
-            SetJump(2);
-            break;
+                SetHealth(100);
+                SetDamage(50);
+                SetJump(2);
+                break;
 
             case 4:
-            SetHealth(100);
-            SetDamage(50);
-            SetJump(3);
-            //dash 
-            break;
+                SetHealth(100);
+                SetDamage(50);
+                SetJump(3);
+                //dash 
+                break;
 
             case 5:
-            SetHealth(100);
-            SetDamage(50);
-            SetJump(4);
-            break;
+                SetHealth(100);
+                SetDamage(50);
+                SetJump(4);
+                break;
 
             default:
-            break;
+                break;
         }
     }
 
@@ -110,9 +111,9 @@ public class PlayerMovement : MonoBehaviour
     {
         // play attack animation
         animator.SetTrigger("attack");
-        AudioSource.PlayClipAtPoint(swosh,transform.position);
+        AudioSource.PlayClipAtPoint(swosh, transform.position);
         // detect all enemy in range
-        Invoke("Hit",0.2f);
+        Invoke("Hit", 0.2f);
     }
 
     private void Hit()
@@ -224,11 +225,15 @@ public class PlayerMovement : MonoBehaviour
             //die or take damage
             int damage = other.gameObject.GetComponent<EnemyMovement>().GetDamage();
             TakeDamage(damage);
-            if(health<1)
+            if (health < 1)
             {
                 Die();
             }
-            
+            else
+            {
+                animator.SetTrigger("hurt");
+            }
+
         }
 
     }
@@ -240,7 +245,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void TakeDamage(int damage)
     {
-        health -= damage;   
+
+        HurtKick();
+        health -= damage;
+    }
+
+    private void HurtKick()
+    {
+        if (isPlayerLive)
+        {
+            AudioSource.PlayClipAtPoint(hurt, transform.position);
+            rb.velocity = new Vector2(-transform.localScale.x * 2, 2.5f);
+        }
+
     }
 
     private void Die()
@@ -251,8 +268,8 @@ public class PlayerMovement : MonoBehaviour
             isPlayerLive = false;
             animator.SetTrigger("die");
             playerMovement.enabled = false;
-            rb.gravityScale = 0;
-            boxCollider2D.enabled = false;
+            //rb.gravityScale = 0;
+            //boxCollider2D.enabled = false;
             StartCoroutine(LoadDeathMenu());
         }
 
@@ -264,7 +281,7 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         SceneManager.LoadScene("DeathScene");
-        
+
     }
 
     public bool getPlayerLiveStatus()
