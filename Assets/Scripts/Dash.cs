@@ -64,4 +64,9 @@ public class Dash : MonoBehaviour
             }
         }
     }
+
+    public bool GetIsDashing()
+    {
+        return isDashing;
+    }
 }

@@ -11,7 +11,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpPower = 1f;
     [SerializeField] int jumpCounter = 1;
     [SerializeField] int howManyJump = 4;
-    [SerializeField] int health = 1;
+    [SerializeField] PlayerHealth playerHealth;
+    
     [SerializeField] int damage = 10;
     [SerializeField] Animator animator;
     [Header("Sound")]
@@ -23,10 +24,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] LayerMask enemyLayer;
 
 
+
     GameStage gameStage;
     BoxCollider2D boxCollider2D;
     Rigidbody2D rb;
     PlayerMovement playerMovement;
+    
     Dash dash;
 
     float attackRate = 4f;
@@ -40,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
         boxCollider2D = GetComponentInChildren<BoxCollider2D>();
         playerMovement = GetComponent<PlayerMovement>();
         dash = GetComponent<Dash>();
+        
         StageUpdates();
 
     }
@@ -50,32 +54,34 @@ public class PlayerMovement : MonoBehaviour
         switch (stageInfo)
         {
             case 0:
+                playerHealth.SetHealth(1);
                 dash.enabled = false;
                 break;
                 
             case 1:
                 // increase health
-                SetHealth(100);
+                playerHealth.SetHealth(100);
+                
                 dash.enabled = false;
 
                 break;
 
             case 2:
-                SetHealth(100);
+                playerHealth.SetHealth(100);
                 SetDamage(50);
                 dash.enabled = false;
 
                 break;
 
             case 3:
-                SetHealth(100);
+                playerHealth.SetHealth(100);
                 SetDamage(50);
                 SetJump(2);
                 dash.enabled = false;
                 break;
 
             case 4:
-                SetHealth(100);
+                playerHealth.SetHealth(100);
                 SetDamage(50);
                 SetJump(3);
                 dash.enabled = true;
@@ -83,14 +89,14 @@ public class PlayerMovement : MonoBehaviour
                 break;
 
             case 5:
-                SetHealth(100);
+                playerHealth.SetHealth(100);
                 SetDamage(50);
                 SetJump(4);
                 dash.enabled = true;
                 break;
 
             default:
-                SetHealth(100);
+                playerHealth.SetHealth(100);
                 SetDamage(50);
                 SetJump(4);
                 dash.enabled = true;
@@ -236,9 +242,13 @@ public class PlayerMovement : MonoBehaviour
 
         if (other.gameObject.tag == "Enemy")
         {
+            
             //die or take damage
             int damage = other.gameObject.GetComponent<EnemyMovement>().GetDamage();
-            TakeDamage(damage);
+            bool dashing = dash.GetIsDashing();
+            
+            if(!dashing)TakeDamage(damage);
+            int health = playerHealth.GetHealth();
             if (health < 1)
             {
                 Die();
@@ -247,6 +257,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 animator.SetTrigger("hurt");
             }
+
+            if(jumpCounter == 0)jumpCounter = 1;
 
         }
 
@@ -261,7 +273,7 @@ public class PlayerMovement : MonoBehaviour
     {
 
         HurtKick();
-        health -= damage;
+        playerHealth.TakeDamage(damage);
     }
 
     private void HurtKick()
@@ -303,13 +315,4 @@ public class PlayerMovement : MonoBehaviour
         return isPlayerLive;
     }
 
-    public int GetHealth()
-    {
-        return health;
-    }
-
-    public void SetHealth(int setValue)
-    {
-        health = setValue;
-    }
 }

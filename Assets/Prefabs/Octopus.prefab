@@ -294,12 +294,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xThrowPower: 4
+  xThrowPowerVar: 2
   yThrowPower: 4
   movementSpeed: 0.5
   animator: {fileID: 1623358702}
   scoreValue: 50
-  health: 150
-  damage: 20
+  health: 200
+  damage: 15
   hitBack: 1
   particle: {fileID: 1355012956309754471}
   isOctopus: 1

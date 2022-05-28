@@ -4906,8 +4906,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94b17e8b96035b7408e4fc074960e9d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementFactor: 3
-  jumpPower: 5.5
+  movementFactor: 3.5
+  jumpPower: 6
   jumpCounter: 1
   howManyJump: 1
   health: 1

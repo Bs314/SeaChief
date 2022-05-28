@@ -10,7 +10,7 @@ public class Health : MonoBehaviour
     [SerializeField] Slider healthBar;
     [SerializeField] GameObject playerCanvas;
     [SerializeField] GameObject player;
-    PlayerMovement playerMovement;
+    PlayerHealth playerHealth;
     GameStage gameStage;
 
     public int stageInfo;
@@ -20,14 +20,9 @@ public class Health : MonoBehaviour
         
         gameStage = FindObjectOfType<GameStage>();
         stageInfo = gameStage.GetDeathCount(); 
-        playerMovement = player.GetComponent<PlayerMovement>();      
-        healthBar.maxValue = playerMovement.GetHealth();    
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        ShowHideBar();
+        playerHealth = player.GetComponent<PlayerHealth>();
+        ShowHideBar();      
+            
     }
 
     private void ShowHideBar()
@@ -41,7 +36,13 @@ public class Health : MonoBehaviour
         else
         {
             playerCanvas.SetActive(true);   
-            healthBar.value = playerMovement.GetHealth();
         }
     }
+    
+    void Update()
+    {
+        healthBar.value = playerHealth.GetHealth();   
+    }
+
+    
 }
