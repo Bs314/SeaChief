@@ -31,7 +31,7 @@ public class DeathInfo : MonoBehaviour
         switch(stage)
         {
             case 1:
-            message = "Sorry this is my fault\nI'm creating an area for you to follow the score\nIn the upper left corner\nI also give you 100 HP\nUse it wisely !";
+            message = "Sorry this is my fault\nI'm creating an area for you to follow the score\nIn the upper left corner\nI also give you 100 HP\n\nUse it wisely !";
             break;
 
             case 2:
@@ -43,7 +43,7 @@ public class DeathInfo : MonoBehaviour
             break;
 
             case 4:
-            message = "Don't panic when enemies surround you\nI said I would help you. Now I'm giving you the DASH skill\nYou can use it as many times as you want\nby pressing the LEFT-ALT key\nAlso you can jump 3 times";
+            message = "Don't panic when enemies surround you\nI said I would help you. Now I'm giving you the DASH skill\nYou can use it as many times as you want\nby pressing the LEFT-ALT key\n\nAlso you can jump 3 times";
             break;
 
             case 5:

@@ -200,7 +200,7 @@ public class EnemyMovement : MonoBehaviour
         animator.SetTrigger("death");
         scoreKeeper.AddScore(scoreValue);
         gameObject.tag = "Dead";
-        Destroy(gameObject, 2);
+        Destroy(gameObject, 1.1f);
 
     }
 
