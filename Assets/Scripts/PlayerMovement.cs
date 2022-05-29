@@ -255,7 +255,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
-                animator.SetTrigger("hurt");
+                if(!playerHealth.isImortal)animator.SetTrigger("hurt");
             }
 
             if(jumpCounter == 0)jumpCounter = 1;
@@ -271,9 +271,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void TakeDamage(int damage)
     {
-
-        HurtKick();
-        playerHealth.TakeDamage(damage);
+        if(!playerHealth.isImortal)
+        {
+            HurtKick();
+            playerHealth.TakeDamage(damage);
+        }
+        
     }
 
     private void HurtKick()

@@ -45,5 +45,10 @@ public class Cheat : MonoBehaviour
         {
             playerHealth.TakeDamage(100);
         }
+
+        if(Input.GetKeyDown(KeyCode.U))
+        {
+            playerHealth.isImortal = !playerHealth.isImortal;
+        }
     }
 }
