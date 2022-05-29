@@ -70,7 +70,7 @@ public class EnemySpawner : MonoBehaviour
             Instantiate(enemyCrab,SpawnPoints[spawnIndex].transform.position,Quaternion.identity);    
         }
         
-        AudioSource.PlayClipAtPoint(waterSplash,SpawnPoints[spawnIndex].transform.position,0.4f);
+        AudioSource.PlayClipAtPoint(waterSplash,SpawnPoints[spawnIndex].transform.position,0.5f);
         isEnemySpawning = false;
         
     }

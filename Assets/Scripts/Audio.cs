@@ -27,7 +27,8 @@ public class Audio : MonoBehaviour
     }
 
     private void Start() {
-        audioSource = GetComponent<AudioSource>();    
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = 0.3f;    
         audioSource.Play();
         
     }
@@ -45,24 +46,31 @@ public class Audio : MonoBehaviour
             {
                 case 0:
                 audioSource.clip = bardsTale;
+                audioSource.volume = 0.2f;
                 break;
                 case 1:
                 audioSource.clip = mainMusic;
+                audioSource.volume = 0.3f;
                 break;
                 case 2:
                 audioSource.clip = kingsFeast;
+                audioSource.volume = 0.2f;
                 break;
                 case 3:
                 audioSource.clip = mainMusic;
+                audioSource.volume = 0.3f;
                 break;
                 case 4:
                 audioSource.clip = minstrelDance;
+                audioSource.volume = 0.2f;
                 break;
                 case 5:
                 audioSource.clip = mainMusic;
+                audioSource.volume = 0.3f;
                 break;
                 default:
                 audioSource.clip = mainMusic;
+                audioSource.volume = 0.3f;
                 break;
             }
             musicNum++;

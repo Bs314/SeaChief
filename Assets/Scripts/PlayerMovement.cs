@@ -131,7 +131,7 @@ public class PlayerMovement : MonoBehaviour
     {
         // play attack animation
         animator.SetTrigger("attack");
-        AudioSource.PlayClipAtPoint(swosh, transform.position);
+        AudioSource.PlayClipAtPoint(swosh, transform.position,1);
         // detect all enemy in range
         Invoke("Hit", 0.2f);
     }

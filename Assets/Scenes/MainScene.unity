@@ -705,7 +705,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "The game rules are simple. \n\nReach the 800 score.\nA-D / Left-Right
+  m_text: "The game rules are simple. \n\nReach the 1000 score.\nA-D / Left-Right
     Arrow Key for MOVE\nSPACE for JUMP\nCTRL for ATTACK\n\nDont wory i ll watch you..\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 748a534b7f72bb64ca865a591e387353, type: 2}
