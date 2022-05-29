@@ -37,7 +37,7 @@ public class Dash : MonoBehaviour
     {
         if (!isDashing)
         {
-            if (Input.GetKeyDown(KeyCode.LeftAlt))
+            if (Input.GetKeyDown(KeyCode.LeftAlt) || Input.GetKeyDown(KeyCode.C))
             {
                 dashParticle.Play();
                 animator.SetTrigger("dash");

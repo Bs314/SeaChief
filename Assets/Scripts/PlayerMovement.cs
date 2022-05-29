@@ -117,7 +117,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Time.time > nextAttackTime)
         {
-            if (Input.GetKeyDown(KeyCode.LeftControl))
+            if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.Z))
             {
                 Attack();
                 nextAttackTime = Time.time + 1f / attackRate;

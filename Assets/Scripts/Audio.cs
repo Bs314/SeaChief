@@ -10,6 +10,8 @@ public class Audio : MonoBehaviour
     [SerializeField] AudioClip bardsTale;
     [SerializeField] AudioClip minstrelDance;
     [SerializeField] AudioClip kingsFeast;
+    [SerializeField] AudioClip rejoicing;
+    [SerializeField] AudioClip theOldTowerInn;
 
     AudioSource audioSource;
     int oldScene = 0;
@@ -68,13 +70,29 @@ public class Audio : MonoBehaviour
                 audioSource.clip = mainMusic;
                 audioSource.volume = 0.3f;
                 break;
+                case 6:
+                audioSource.clip = rejoicing;
+                audioSource.volume = 0.2f;
+                break;
+                case 7:
+                audioSource.clip = mainMusic;
+                audioSource.volume = 0.3f;
+                break;
+                case 8:
+                audioSource.clip = theOldTowerInn;
+                audioSource.volume = 0.2f;
+                break;
+                case 9:
+                audioSource.clip = mainMusic;
+                audioSource.volume = 0.3f;
+                break;
                 default:
                 audioSource.clip = mainMusic;
                 audioSource.volume = 0.3f;
                 break;
             }
             musicNum++;
-            if(musicNum>5)musicNum = 0;
+            if(musicNum>9)musicNum = 0;
             audioSource.Play();
         }
 

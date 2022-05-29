@@ -495,6 +495,8 @@ MonoBehaviour:
   bardsTale: {fileID: 8300000, guid: 8f960815157e96b48820ff3460efc2f4, type: 3}
   minstrelDance: {fileID: 8300000, guid: 11bb847153698e24a9051109ec5a4104, type: 3}
   kingsFeast: {fileID: 8300000, guid: 515d209fd8151fa4980f3a73e441a30d, type: 3}
+  rejoicing: {fileID: 8300000, guid: 903343745646d1040bdedb6f3f2f59ca, type: 3}
+  theOldTowerInn: {fileID: 8300000, guid: 04bb3e4bef6cf8744914f67ee5257c2e, type: 3}
 --- !u!82 &463335551
 AudioSource:
   m_ObjectHideFlags: 0
