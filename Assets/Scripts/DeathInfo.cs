@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 
 
@@ -22,11 +23,17 @@ public class DeathInfo : MonoBehaviour
     
     void Update()
     {
-        WriteText();    
+        Scene scene = SceneManager.GetActiveScene();
+        if(scene.buildIndex != 3)
+        {
+            WriteText(); 
+        }
+
     }
 
     private void WriteText()
     {
+        
         int stage = gameStage.GetDeathCount();
         switch(stage)
         {
@@ -43,11 +50,11 @@ public class DeathInfo : MonoBehaviour
             break;
 
             case 4:
-            message = "Don't panic when enemies surround you\nI said I would help you. Now I'm giving you the DASH skill\nYou can use it as many times as you want\nby pressing the LEFT-ALT key\n\nAlso you can jump 3 times";
+            message = "Don't panic when enemies surround you\nI said I would help you. Now I'm giving you the DASH skill\nYou can use it as many times as you want\nby pressing the LEFT-ALT or C key\n\nAlso you can jump 3 times";
             break;
 
             case 5:
-            message = "I gave you everything I could\nFor more, I need to take a few more courses\nUntil then, I believe you can reach the desired score\nwith what you have...\nYou can jum 4 times now..";
+            message = "I gave you everything I could\nFor more, I need to take a few more courses\nUntil then, I believe you can reach the desired score\nwith what you have...\n\nYou can jum 4 times now..";
             break;
 
             default: 

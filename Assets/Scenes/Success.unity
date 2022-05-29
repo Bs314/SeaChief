@@ -157,8 +157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 4.3}
-  m_SizeDelta: {x: 0, y: -16.979}
+  m_AnchoredPosition: {x: 0.000061035156, y: -0.0005187988}
+  m_SizeDelta: {x: -0.000030518, y: -0.001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &16339166
 MonoBehaviour:
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PLAY
+  m_text: Main Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 748a534b7f72bb64ca865a591e387353, type: 2}
   m_sharedMaterial: {fileID: -8859551986520393290, guid: 748a534b7f72bb64ca865a591e387353, type: 2}
@@ -207,15 +207,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 81.63
-  m_fontSizeBase: 81.63
+  m_fontSize: 55.85
+  m_fontSizeBase: 55.85
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 1024
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -7.894581, z: 0, w: -8.427929}
+  m_margin: {x: -0.14491229, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -291,11 +291,11 @@ RectTransform:
   m_Father: {fileID: 1632028249}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.462, y: 0.11285341}
-  m_AnchorMax: {x: 0.65300006, y: 0.24626702}
-  m_AnchoredPosition: {x: 29.59999, y: 31.100037}
-  m_SizeDelta: {x: -182.422, y: -35.677}
-  m_Pivot: {x: 0.50000006, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 121, y: -313}
+  m_SizeDelta: {x: -1525.089, y: -943.486}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &127931307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,9 +340,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1983288559}
+      - m_Target: {fileID: 1245149421}
         m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
-        m_MethodName: GameScene
+        m_MethodName: MainScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -447,7 +447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2c6ebdafbfff3b4aa3daad0e01e349b, type: 3}
---- !u!1 &463335548
+--- !u!1 &777594695
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -455,145 +455,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 463335549}
-  - component: {fileID: 463335551}
-  - component: {fileID: 463335550}
+  - component: {fileID: 777594697}
+  - component: {fileID: 777594696}
   m_Layer: 0
-  m_Name: Audio
+  m_Name: DeathTextController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &463335549
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 463335548}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 75.944084, y: 162.65881, z: -58.429485}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &463335550
+--- !u!114 &777594696
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 463335548}
+  m_GameObject: {fileID: 777594695}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 005d4f5bb3b5d1240881d6c6423fdc9f, type: 3}
+  m_Script: {fileID: 11500000, guid: 79238c500ff11c947b4c3d312c251f20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMusic: {fileID: 8300000, guid: 60c9d25a18c3c3447b0b261aedd5ec55, type: 3}
-  bardsTale: {fileID: 8300000, guid: 8f960815157e96b48820ff3460efc2f4, type: 3}
-  minstrelDance: {fileID: 8300000, guid: 11bb847153698e24a9051109ec5a4104, type: 3}
-  kingsFeast: {fileID: 8300000, guid: 515d209fd8151fa4980f3a73e441a30d, type: 3}
-  rejoicing: {fileID: 8300000, guid: 903343745646d1040bdedb6f3f2f59ca, type: 3}
-  theOldTowerInn: {fileID: 8300000, guid: 04bb3e4bef6cf8744914f67ee5257c2e, type: 3}
-  marketDay: {fileID: 8300000, guid: df083f5df1a91ee468d9a76510ea6592, type: 3}
---- !u!82 &463335551
-AudioSource:
+  text: {fileID: 1207835524}
+--- !u!4 &777594697
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 463335548}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 60c9d25a18c3c3447b0b261aedd5ec55, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.5
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  m_GameObject: {fileID: 777594695}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 342.38324, y: 67.9212, z: -207.19858}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1153184543
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -663,7 +560,7 @@ GameObject:
   - component: {fileID: 1207835525}
   - component: {fileID: 1207835524}
   m_Layer: 5
-  m_Name: DeathText
+  m_Name: DeatText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -685,7 +582,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.05431251, y: 0.2662199}
   m_AnchorMax: {x: 1, y: 0.7337801}
-  m_AnchoredPosition: {x: -0.020996094, y: 0.5}
+  m_AnchoredPosition: {x: -0.020935059, y: 41}
   m_SizeDelta: {x: 0.041999817, y: 1.256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1207835524
@@ -708,9 +605,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "The game rules are simple. \n\nReach the 1000 score.\nA-D / Left-Right
-    Arrow Key for MOVE\nSPACE for JUMP\nCTRL or Z (Mac Users) for ATTACK\n\nDont
-    wory i ll watch you..\n\n"
+  m_text: "Congratulations, \n\nYou finished the game\n\n\n\n\nThanks for playing..."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 748a534b7f72bb64ca865a591e387353, type: 2}
   m_sharedMaterial: {fileID: -8859551986520393290, guid: 748a534b7f72bb64ca865a591e387353, type: 2}
@@ -737,8 +632,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 46.32
+  m_fontSizeBase: 46.32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -773,7 +668,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -154.24391, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -787,6 +682,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207835522}
   m_CullTransparentMesh: 1
+--- !u!114 &1245149421 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8454309499411496966, guid: 8387e2a6b340a3a458021de825a48b41, type: 3}
+  m_PrefabInstance: {fileID: 2102126841}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d14b0fcddb562734488cab3f74253bb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1496637149
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,7 +846,7 @@ GameObject:
   - component: {fileID: 1632028247}
   - component: {fileID: 1632028246}
   m_Layer: 5
-  m_Name: CanvasMain
+  m_Name: CanvasDeath
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1094,18 +1000,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1983288559 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8454309499411496966, guid: 8387e2a6b340a3a458021de825a48b41, type: 3}
-  m_PrefabInstance: {fileID: 8454309498034885865}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d14b0fcddb562734488cab3f74253bb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1001 &8454309498034885865
+--- !u!1001 &2102126841
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2

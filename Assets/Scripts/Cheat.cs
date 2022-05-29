@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Cheat : MonoBehaviour
 {
+    PlayerHealth playerHealth;
     ScoreKeeper scoreKeeper;
     Dash dash;
 
@@ -11,6 +12,7 @@ public class Cheat : MonoBehaviour
     {
         scoreKeeper = FindObjectOfType<ScoreKeeper>();   
         dash = FindObjectOfType<Dash>(); 
+        playerHealth = FindObjectOfType<PlayerHealth>();
     }
 
    
@@ -38,6 +40,10 @@ public class Cheat : MonoBehaviour
                 dash.enabled = true;
             }
 
+        }
+        if(Input.GetKeyDown(KeyCode.H))
+        {
+            playerHealth.TakeDamage(100);
         }
     }
 }
