@@ -182,8 +182,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Main Menu
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 748a534b7f72bb64ca865a591e387353, type: 2}
-  m_sharedMaterial: {fileID: -8859551986520393290, guid: 748a534b7f72bb64ca865a591e387353, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8a86f56912eecc040be850bad1873bbc, type: 2}
+  m_sharedMaterial: {fileID: -1468359652299492550, guid: 8a86f56912eecc040be850bad1873bbc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -607,8 +607,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Congratulations, \n\nYou finished the game\n\n\n\n\nThanks for playing..."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 748a534b7f72bb64ca865a591e387353, type: 2}
-  m_sharedMaterial: {fileID: -8859551986520393290, guid: 748a534b7f72bb64ca865a591e387353, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8a86f56912eecc040be850bad1873bbc, type: 2}
+  m_sharedMaterial: {fileID: -1468359652299492550, guid: 8a86f56912eecc040be850bad1873bbc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

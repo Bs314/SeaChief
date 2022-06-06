@@ -214,7 +214,7 @@ MonoBehaviour:
   animator: {fileID: 826757289132073536}
   scoreValue: 20
   health: 100
-  damage: 5
+  damage: 10
   hitBack: 5
   particle: {fileID: 2675125539484339474}
   isOctopus: 0

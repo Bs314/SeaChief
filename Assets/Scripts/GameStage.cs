@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameStage : MonoBehaviour
 {
@@ -30,7 +31,11 @@ public class GameStage : MonoBehaviour
     
     void Update()
     {
-
+        Scene scene = SceneManager.GetActiveScene();
+        if(scene.buildIndex == 3)
+        {
+            deathCount = 0;
+        }  
     }
 
     public int GetDeathCount()
